@@ -27,7 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin')->group(function() {
+Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(function() {
     Route::get('/', [DashboardController::class, 'home']);
     Route::resource('/posts', PostController::class)->parameters(['posts' => 'post:slug']);
 });
