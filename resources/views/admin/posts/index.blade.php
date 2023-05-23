@@ -2,11 +2,11 @@
 
 @section('content')
     <table class="mt-5 table table-striped">
-        <thead>
+        <thead class="text-uppercase">
             <th>Titolo</th>
             <th>Contenuto</th>
             <th>Slug</th>
-            <th>Visualizza</th>
+            <th></th>
         </thead>
         <tbody>
             @foreach ($posts as $post)
@@ -21,4 +21,8 @@
             @endforeach
         </tbody>
     </table>
+
+    <div class="btn-container d-flex justify-content-center m-4">
+        <button class="btn btn-primary"><a href="{{route('admin.posts.create')}}" class="text-light text-decoration-none">Aggiungi un post</a></button>
+    </div>
 @endsection
